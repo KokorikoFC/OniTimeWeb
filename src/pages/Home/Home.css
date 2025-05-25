@@ -1,0 +1,36 @@
+.home-container {
+background-color: var(--light_green);
+}
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--light_green);
+    position: relative;
+}
+.hero_wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin-right: 20px;
+  width: 100%;
+  height: auto;
+}
+.home-content-container{
+    background-color: white;
+    border: 2px solid var(--dark_brown);
+    height: 700px;
+    position: relative;
+}
+.home_content_wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin-right: 20px;
+  width: 100%;
+  height: auto;
+}

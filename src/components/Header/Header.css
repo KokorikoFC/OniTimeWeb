@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 70px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    border-bottom: 2px solid var(--dark_brown);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.header_oniTime_logo_containe {
+    display: flex;
+    align-items: center;
+}
+.header_oniTime_icon {
+    height: 50px;
+    border-radius: 100%;
+}
+.header_oniTime_logo {
+    height: 35px;
+    margin-left: 10px;
+}
+
+.header_nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header_nav a {
+    text-decoration: none;
+    color: var(--dark_brown);
+    transition: color 0.3s ease;
+}

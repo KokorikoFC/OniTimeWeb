@@ -1,0 +1,48 @@
+footer {
+    width: 100%;
+    height: auto;
+    background-color: var(--brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_container{
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_container p{
+    font-weight: 600;
+}
+.footer_logo_container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    width: 20%;
+}
+.footer_oniTime_icon{
+    height: 60px;
+    border-radius: 100%;
+}
+.footer_oniTime_logo{
+    height: 45px;
+    margin-left: 10px;
+}
+.footer_media_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    gap: 20px;
+}
+
+.media_icon{
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+    color: var(--dark_brown);
+}

@@ -1,4 +1,11 @@
 :root {
+  --light_green: #D5DEAF;
+  --brown: #987D62;
+  --dark_brown: #473F34;
+}
+
+
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,6 +18,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+html, body, #root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+    box-sizing: border-box;
+
 }
 
 a {
@@ -28,6 +50,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -35,6 +58,12 @@ h1 {
   line-height: 1.1;
 }
 
+p{
+  font-size: 1em;
+  line-height: 1.5;
+  margin:0;
+  color: var(--dark_brown);
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
