@@ -14,7 +14,9 @@ footer {
     align-items: center;
 }
 .footer_container p{
+    width: 30%;
     font-weight: 600;
+    text-align: end;
 }
 .footer_logo_container{
     display: flex;
@@ -36,7 +38,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 60%;
+    width: 50%;
     gap: 20px;
 }
 
