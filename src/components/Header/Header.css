@@ -8,7 +8,7 @@ header {
     z-index: 1000;
     width: 100%;
     top: 0;
-    border-bottom: 2px solid var(--dark_brown);
+    background-color: white;
     transition: background-color 0.3s ease;
     overflow: hidden;
     box-sizing: border-box;

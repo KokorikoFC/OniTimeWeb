@@ -12,21 +12,24 @@
     "bgColor": "var(--light_green)",
     "subtitle": "Misiones",
     "title": "MISIONES QUE IMPULSAN TU PROGRESO",
-    "text": "Completa misiones pensadas para motivarte y hacer tu día más llevadero. Cada vez que superes una, ganarás monedas que podrás usar para decorar tu casa con nuevos muebles y detalles únicos. Avanza a tu ritmo, consigue recompensas y transforma tu espacio poco a poco, mientras también te cuidas a ti."
+    "text": "Completa misiones pensadas para motivarte y hacer tu día más llevadero. Cada vez que superes una, ganarás monedas que podrás usar para decorar tu casa con nuevos muebles y detalles únicos. Avanza a tu ritmo, consigue recompensas y transforma tu espacio poco a poco, mientras también te cuidas a ti.",
+    "image": "src/assets/images/mission_screen.png"
   },
   {
     "id": 3,
     "bgColor": "white",
     "subtitle": "Diario",
     "title": "ESCRIBE LO QUE SIENTES, RECIBE LO QUE NECESITAS",
-    "text": "Cada día, selecciona cómo te sientes y escribe tu entrada en el diario, como si fuera un espacio solo para ti. Expresa tus emociones, pensamientos o lo que quieras compartir. Al terminar, recibirás una carta motivacional personalizada que te acompañará y apoyará según lo que hayas escrito. Un momento de cuidado y reflexión para tu bienestar diario."
+    "text": "Cada día, selecciona cómo te sientes y escribe tu entrada en el diario, como si fuera un espacio solo para ti. Expresa tus emociones, pensamientos o lo que quieras compartir. Al terminar, recibirás una carta motivacional personalizada que te acompañará y apoyará según lo que hayas escrito. Un momento de cuidado y reflexión para tu bienestar diario.",
+    "image": "src/assets/images/diary_screen.png"
   },
   {
     "id": 4,
     "bgColor": "var(--light_green)",
     "subtitle": "Chat",
     "title": "TU REFUGIO PARA CONVERSAR",
-    "text": "Habla con tu mascota cuando quieras compartir lo que sientes o simplemente conversar. Ella te escuchará, te animará cuando estés triste y se preocupará por ti de verdad. Siempre estará ahí para preguntarte cómo estás y acompañarte en tu día a día, ofreciéndote apoyo y cariño cuando más lo necesites."
+    "text": "Habla con tu mascota cuando quieras compartir lo que sientes o simplemente conversar. Ella te escuchará, te animará cuando estés triste y se preocupará por ti de verdad. Siempre estará ahí para preguntarte cómo estás y acompañarte en tu día a día, ofreciéndote apoyo y cariño cuando más lo necesites.",
+    "image": "src/assets/images/chat_screen.png"
   },
   {
     "id": 5,
@@ -40,13 +43,22 @@
     "bgColor": "var(--light_green)",
     "subtitle": "Elige tu mascota",
     "title": "ELIGE TU COMPAÑERO IDEAL Y LLENA TU ESPACIO DE VIDA",
-    "text": "Escoge entre nuestras adorables mascotas, inspiradas en la deliciosa comida típica japonesa. Cada compañero tiene su propia personalidad y te acompañará en tus misiones diarias. Personaliza tu espacio con la mascota que más te guste y haz que cada día sea más especial mientras avanzas en tus hábitos y emociones. ¡Tu nuevo amigo está esperando!"
+    "text": "Escoge entre nuestras adorables mascotas, inspiradas en la deliciosa comida típica japonesa. Cada compañero tiene su propia personalidad y te acompañará en tus misiones diarias. Personaliza tu espacio con la mascota que más te guste y haz que cada día sea más especial mientras avanzas en tus hábitos y emociones. ¡Tu nuevo amigo está esperando!",
+    "image": "src/assets/images/pet_screen.png"
   },
   {
     "id": 7,
     "bgColor": "white",
-    "subtitle": "Personaliza tu casa",
-    "title": "COMPRA MUEBLES Y CREA TU CASA IDEAL",
-    "text": "Compra muebles únicos y personaliza cada rincón de tu casa. Transforma tu espacio con estilo y crea un hogar que refleje tu personalidad. ¡Haz que tu casa sea tan especial como tú!"
+    "subtitle": "Wrapped",
+    "title": "¡DESCUBRAMOS TU AÑO JUNTOS!",
+    "text": "Tu año con OniTime es más que fechas. Es una historia de crecimiento, emociones y hábitos. Ve tus logros y cómo equilibraste productividad y bienestar, día a día."
+  },
+  {
+    "id": 8,
+    "bgColor": "var(--light_green)",
+    "subtitle": "Descargar",
+    "title": "EMPIEZA A CREAR NUEVOS HÁBITOS CON ONITIME HOY",
+    "text": "¡Explora esta demo y conoce a Onitime!",
+     "image": "src/assets/images/button_placeholder.png"
   }
 ]

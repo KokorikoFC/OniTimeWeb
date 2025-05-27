@@ -25,7 +25,7 @@ function Footer() {
                     />
                 </div>
                 <div className="footer_media_container">
-                    <FaGithub className="media_icon"/>
+                    <a href="https://github.com/KokorikoFC/TfgOnitime"><FaGithub className="media_icon"/></a>
                     <FaXTwitter className="media_icon"/>
 
                 </div>

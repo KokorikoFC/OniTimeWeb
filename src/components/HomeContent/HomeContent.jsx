@@ -5,7 +5,7 @@ import brownWave from "../../assets/images/brown_wave.svg";
 
 import "./HomeContent.css";
 
-function HomeContent({ id, bgColor, subtitle, title, text,image, isLast }) {
+function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
     const waveSrc = isLast
         ? brownWave
         : bgColor === "var(--light_green)"
@@ -28,7 +28,13 @@ function HomeContent({ id, bgColor, subtitle, title, text,image, isLast }) {
                 <p>{text}</p>
             </div>
             <div className="home_content_img">
-                 {image && <img src={image} alt={`${title} illustration`} className="section-image" />}
+                {image && (
+                    <img
+                        src={image}
+                        alt={`${title} illustration`}
+                        className="section-image"
+                    />
+                )}
             </div>
 
             <img
