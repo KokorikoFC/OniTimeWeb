@@ -7,15 +7,35 @@ import cozy_home from "../../assets/images/cozy_home.png";
 import botanic_home from "../../assets/images/botanic_home.png";
 import sushi_home from "../../assets/images/sushi_home.png";
 import christmast_home from "../../assets/images/christmast_home.png";
+import { useNavigate } from "react-router-dom"; // si usas react-router
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseConfig"; // ajusta la ruta según tu estructura
 
 import "./HomeContent.css";
 
 function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = async () => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log("Usuario autenticado:", user.uid);
+            navigate("/wrapped"); // redirigir al Wrapped
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error);
+            alert("Correo o contraseña incorrectos");
+        }
+    };
+
     const waveSrc = isLast
         ? brownWave
         : bgColor === "var(--light_green)"
-        ? whiteWave
-        : greenWave;
+            ? whiteWave
+            : greenWave;
 
     const dynamicClass = `home-content-container home-content-${id}`;
 
@@ -86,12 +106,12 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 <h3>{subtitle}</h3>
                 <h2>{title}</h2>
                 {id === 8 && (
-                   <div className="download-button">
-                    <img
+                    <div className="download-button">
+                        <img
                             src="src/assets/images/button_placeholder.png"
                             alt="form button"
                         />
-                   </div>
+                    </div>
                 )}
                 <p>{text}</p>
             </div>
@@ -111,9 +131,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                         <img
                             key={idx}
                             src={imgSrc}
-                            alt={`Home style ${
-                                (idx % originalHomeImages.length) + 1
-                            }`}
+                            alt={`Home style ${(idx % originalHomeImages.length) + 1
+                                }`}
                             className="home_style_image"
                         />
                     ))}
@@ -123,17 +142,29 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
             {id === 7 && (
                 <div className="form">
                     <div className="email-form-container">
-                        <label htmlFor="">Introduce tu correo*</label>
-                        <input type="text" required />
+                        <label>Introduce tu correo*</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="password-form-container">
-                        <label htmlFor="">Introduce tu contraseña*</label>
-                        <input type="text" required />
+                        <label>Introduce tu contraseña*</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="form-buttons">
                         <img
                             src="src/assets/images/button_placeholder.png"
                             alt="form button"
+                            onClick={handleLogin}
+                            style={{ cursor: "pointer" }}
                         />
                     </div>
                 </div>

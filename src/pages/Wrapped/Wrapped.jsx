@@ -5,7 +5,7 @@ import { getUserData, getMoodCountsByYear, getLongestStreak } from "../../firest
 import { useNavigate } from "react-router-dom";
 
 
-function Wrapper() {
+function Wrapped() {
     const [userData, setUserData] = useState(null);
     const [moodCounts, setMoodCounts] = useState(null);
     const [longestStreak, setLongestStreak] = useState(null);
@@ -72,4 +72,4 @@ function Wrapper() {
     );
 }
 
-export default Wrapper;
+export default Wrapped;
