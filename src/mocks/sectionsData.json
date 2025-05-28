@@ -58,7 +58,6 @@
     "bgColor": "var(--light_green)",
     "subtitle": "Descargar",
     "title": "EMPIEZA A CREAR NUEVOS HÁBITOS CON ONITIME HOY",
-    "text": "¡Explora esta demo y conoce a Onitime!",
-     "image": "src/assets/images/button_placeholder.png"
+    "text": "¡Explora esta demo y conoce a Onitime!"
   }
 ]

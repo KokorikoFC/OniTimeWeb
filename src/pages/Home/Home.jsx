@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaHome, FaPlus } from "react-icons/fa";
 import "./Home.css";
 import whiteWave from "../../assets/images/white_wave.svg";
@@ -23,22 +22,7 @@ function Home() {
                     alt="Decorative wave"
                 />
             </div>
-            <div className="form">
-                <div className="email-form-container">
-                    <label htmlFor="">Introduce tu correo*</label>
-                    <input type="text" required />
-                </div>
-                <div className="password-form-container">
-                    <label htmlFor="">Introduce tu contraseña*</label>
-                    <input type="text" required />
-                </div>
-                <div className="form-buttons">
-                    <img
-                        src="src/assets/images/button_placeholder.png"
-                        alt="form button"
-                    />
-                </div>
-            </div>
+            
             <div>
                 {sectionsDataWithImages.map(
                     ({ id, bgColor, subtitle, title, text, image }, index) => (

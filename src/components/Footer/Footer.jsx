@@ -4,7 +4,6 @@ import favicon from "../../assets/logos/oniTime_favicon.png";
 import logo from "../../assets/logos/oniTime_logo.png";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import wave from "../../assets/images/wave.svg";
 
 
 
