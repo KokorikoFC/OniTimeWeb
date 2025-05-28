@@ -12,6 +12,7 @@
     display: block;
     width: 100%;
     height: auto;
+    filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.1));
 }
 
 .home_content_text {
@@ -41,7 +42,7 @@
     height: 900px;
     width: 100%;
     gap: 10%;
-    padding-bottom: 90px;
+    padding-bottom: 10%;
 }
 .home_content_img {
     display: flex;
@@ -63,7 +64,7 @@
     height: 870px;
     width: 100%;
     gap: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 9%;
 }
 
 /*Container 3*/
@@ -74,8 +75,10 @@
     height: 900px;
     width: 100%;
     gap: 10%;
-    padding-bottom: 90px;
+    padding-bottom: 7%;
     background-image: url("src/assets/images/diary_background_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*Container 7*/
@@ -96,7 +99,7 @@
     margin-bottom: 100px;
 }
 
-.form{
+.form {
     height: 300px;
     width: 100%;
     display: flex;
@@ -105,18 +108,21 @@
     flex-direction: column;
 }
 
-.email-form-container, .password-form-container{
+.email-form-container,
+.password-form-container {
     display: flex;
     flex-direction: column;
     width: 40%;
     margin: auto;
 }
-.email-form-container label, .password-form-container label{
+.email-form-container label,
+.password-form-container label {
     font-size: 0.9rem;
     color: var(--brown);
     margin-top: 0.5rem;
 }
-.email-form-container input, .password-form-container input{
+.email-form-container input,
+.password-form-container input {
     border: none;
     background-color: transparent;
     border-bottom: 3px solid var(--brown);
@@ -124,28 +130,28 @@
     font-size: 1.2rem;
     color: var(--dark_brown);
 }
-.email-form-container input:focus, .password-form-container input:focus {
+.email-form-container input:focus,
+.password-form-container input:focus {
     background-color: transparent;
     outline: none;
     border-bottom: 3px solid var(--brown);
 }
 
-.form-buttons{
+.form-buttons {
     margin: auto;
     width: 20%;
     height: auto;
     margin-top: 50px;
 }
-.form-buttons img{
+.form-buttons img {
     margin: auto;
     width: 100%;
 }
-.form-buttons img:hover{
+.form-buttons img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
-
 
 /*Container 8*/
 .home-content-8 {
@@ -164,7 +170,7 @@
     text-align: center;
 }
 
-.home-content-8 .home_content_text p{
+.home-content-8 .home_content_text p {
     margin-top: 5%;
 }
 .download-button {
@@ -173,29 +179,26 @@
 }
 
 .download-button img:hover {
-    transform:  scale(1.1);
+    transform: scale(1.1);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-
-
 /*container 5*/
 
 .home_content_slider {
-    display: flex; 
-    overflow-x: hidden; 
-    scroll-behavior: auto; 
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: auto;
     height: 400px;
 }
 
 .home_style_image {
-    width: auto; 
-    height: auto; 
-    margin-right: 10px; 
+    width: auto;
+    height: auto;
+    margin-right: 10px;
     flex-shrink: 0;
 }
-
 
 .home-content-5 {
     padding-bottom: 10%;
@@ -207,7 +210,6 @@
     margin-bottom: 100px;
 }
 
-.slider_container{
+.slider_container {
     display: flex;
-    
 }

@@ -17,6 +17,7 @@ footer {
     width: 30%;
     font-weight: 600;
     text-align: end;
+    cursor: default;
 }
 .footer_logo_container{
     display: flex;

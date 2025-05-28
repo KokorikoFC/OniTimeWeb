@@ -12,7 +12,8 @@ function Footer() {
         <footer>
             <div className="footer_container">
                 <div className="footer_logo_container">
-                    <img
+                    <a href="/">
+                        <img
                         className="footer_oniTime_icon"
                         src={favicon}
                         alt="oniTime icon"
@@ -22,6 +23,7 @@ function Footer() {
                         src={logo}
                         alt="oniTime logo"
                     />
+                    </a>
                 </div>
                 <div className="footer_media_container">
                     <a href="https://github.com/KokorikoFC/TfgOnitime"><FaGithub className="media_icon"/></a>

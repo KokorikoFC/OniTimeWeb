@@ -10,18 +10,22 @@ import christmast_home from "../../assets/images/christmast_home.png";
 import { useNavigate } from "react-router-dom"; // si usas react-router
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig"; // ajusta la ruta según tu estructura
+import { motion } from "framer-motion";
 
 import "./HomeContent.css";
 
 function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = async () => {
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
             const user = userCredential.user;
             console.log("Usuario autenticado:", user.uid);
             navigate("/wrapped"); // redirigir al Wrapped
@@ -34,8 +38,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
     const waveSrc = isLast
         ? brownWave
         : bgColor === "var(--light_green)"
-            ? whiteWave
-            : greenWave;
+        ? whiteWave
+        : greenWave;
 
     const dynamicClass = `home-content-container home-content-${id}`;
 
@@ -47,7 +51,6 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
         christmast_home,
     ];
 
-    // Duplicamos las imágenes para crear el efecto continuo
     const allHomeImages = [...originalHomeImages, ...originalHomeImages];
 
     const sliderRef = useRef(null);
@@ -76,7 +79,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
 
             const getImageWidth = () => {
                 const firstImage = slider.querySelector(".home_style_image");
-                return firstImage ? firstImage.offsetWidth + 10 : 0; // + margin-right
+                return firstImage ? firstImage.offsetWidth + 10 : 0;
             };
 
             const waitForImages = () => {
@@ -84,7 +87,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 if (width > 0) {
                     animate();
                 } else {
-                    setTimeout(waitForImages, 100); // Intenta de nuevo en 100ms
+                    setTimeout(waitForImages, 100);
                 }
             };
 
@@ -102,9 +105,16 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 color: bgColor === "white" ? "#000" : "#fff",
             }}
         >
-            <div className="home_content_text">
+            <motion.div
+                className="home_content_text"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
                 <h3>{subtitle}</h3>
                 <h2>{title}</h2>
+
                 {id === 8 && (
                     <div className="download-button">
                         <img
@@ -113,17 +123,29 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                         />
                     </div>
                 )}
+
                 <p>{text}</p>
-            </div>
-            <div className="home_content_img">
+            </motion.div>
+
+            <motion.div
+                className="home_content_img"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
                 {image && (
-                    <img
+                    <motion.img
                         src={image}
                         alt={`${title} illustration`}
                         className="section-image"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
                     />
                 )}
-            </div>
+            </motion.div>
 
             {id === 5 && (
                 <div className="home_content_slider" ref={sliderRef}>
@@ -131,8 +153,9 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                         <img
                             key={idx}
                             src={imgSrc}
-                            alt={`Home style ${(idx % originalHomeImages.length) + 1
-                                }`}
+                            alt={`Home style ${
+                                (idx % originalHomeImages.length) + 1
+                            }`}
                             className="home_style_image"
                         />
                     ))}
@@ -140,7 +163,13 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
             )}
 
             {id === 7 && (
-                <div className="form">
+                <motion.div
+                    className="form"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                     <div className="email-form-container">
                         <label>Introduce tu correo*</label>
                         <input
@@ -167,7 +196,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                             style={{ cursor: "pointer" }}
                         />
                     </div>
-                </div>
+                </motion.div>
             )}
 
             <img
