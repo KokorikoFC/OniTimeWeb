@@ -10,10 +10,9 @@
     text-align: left;
 }
 .faq_list hr {
-    margin: 10px 0;
     border: 0;
     border-top: 1px solid var(--brown);
-    margin: 20px 0;
+    margin: 25px 0;
 }
 .faq_question {
     display: flex;
@@ -31,7 +30,7 @@
     margin: 0;
 }
 
-.faq_answer spam {
+.faq_answer span {
     padding: 10px 0;
     color: var(--green);
     font-size: 1.1rem;
@@ -49,3 +48,4 @@
 .faq_toggle_icon.rotated {
     transform: rotate(180deg);
 }
+
