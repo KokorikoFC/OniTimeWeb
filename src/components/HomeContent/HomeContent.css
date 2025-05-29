@@ -111,7 +111,6 @@
     display: flex;
 }
 
-
 /*Container 7*/
 .home-content-7 {
     display: flex;
@@ -184,10 +183,11 @@
     transform: scale(1.05);
     cursor: pointer;
 }
+
 /*Container 8*/
 .home-content-8 {
     align-items: center;
-    justify-content:center ;
+    justify-content: center;
     width: 100%;
     flex-direction: column;
     height: auto;
@@ -221,17 +221,90 @@
     margin-top: 5%;
 }
 .download-button {
-    height: 50px;
-    margin-top: 6%;
-    transition: all 0.3s ease-in-out; 
+    margin: auto;
+    width: 30%;
+    height: auto;
+    margin-top: 50px;
 }
 
 .download-button img {
-    transition: transform 0.3s ease-in-out; 
+     margin: auto;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
 }
 
 .download-button img:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
+.form-buttons {
+    margin: auto;
+    width: 20%;
+    height: auto;
+    margin-top: 50px;
+}
+.form-buttons img {
+    margin: auto;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
 
+.form-buttons img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .home-content-container {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 20%;
+        padding-top: 10%;
+    }
+    .home-content-container p,
+    .home-content-container h3 {
+        font-size: 1rem;
+    }
+    .home-content-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .home_content_text {
+        width: 100%;
+        padding: 40px;
+    }
+    .home_content_img img {
+        height: 500px;
+        margin-top: 50px;
+    }
+
+    .home-content-3 {
+        background-position: center;
+    }
+
+    .home-content-5 .home_content_text,
+    .home-content-7 .home_content_text,
+    .home-content-8 .home_content_text,
+    .home-content-9 .home_content_text {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .home_content_slider {
+        height: 200px;
+    }
+
+    .email-form-container,
+    .password-form-container {
+        width: 80%;
+    }
+    .form-buttons {
+        width: 50%;
+    }
+    .faq_container {
+        width: 100%;
+    }
+    .download-button {
+        width: 100%;
+    }
+
+}

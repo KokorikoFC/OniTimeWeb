@@ -2,13 +2,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
-    height: 70px;
+    padding: 10px 15%;
+    height: 60px;
     position: fixed;
     z-index: 1000;
     width: 100%;
     top: 0;
-    background-color: transparent; /* ← CAMBIADO */
+    background-color: transparent; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     box-sizing: border-box;
@@ -21,10 +21,15 @@ header.scrolled {
 
 .nav-button{
     cursor: pointer;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header_oniTime_logo_containe {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .header_oniTime_icon {
     height: 50px;
@@ -64,3 +69,15 @@ header.scrolled {
 .header_nav a:hover::before {
     width: 100%; 
 }
+
+@media (max-width: 768px) {
+header{
+    padding: 0 20px;
+}
+.header_oniTime_logo {
+    display: none;
+}
+.header_nav {
+    font-size: 0.9rem;
+}
+    }

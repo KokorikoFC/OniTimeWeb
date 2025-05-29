@@ -6,35 +6,35 @@ footer {
     justify-content: center;
     align-items: center;
 }
-.footer_container{
+.footer_container {
     width: 95%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.footer_container p{
+.footer_container p {
     width: 30%;
     font-weight: 600;
     text-align: end;
     cursor: default;
 }
-.footer_logo_container{
+.footer_logo_container {
     display: flex;
     align-items: center;
     justify-content: start;
     height: 100%;
     width: 30%;
 }
-.footer_oniTime_icon{
+.footer_oniTime_icon {
     height: 60px;
     border-radius: 100%;
 }
-.footer_oniTime_logo{
+.footer_oniTime_logo {
     height: 45px;
     margin-left: 10px;
 }
-.footer_media_container{
+.footer_media_container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,4 +54,38 @@ footer {
 
 .media_icon:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .footer_container {
+        height: 100px;
+        flex-wrap: wrap;
+    }
+    .footer_logo_container {
+        width: 50%;
+        height: 50%;
+        padding-left: 5px;
+    }
+    .footer_oniTime_logo {
+        height: 30px;
+    }
+    .footer_oniTime_icon {
+        height: 40px;
+        border-radius: 100%;
+    }
+    .footer_media_container {
+        width: 50%;
+        height: 50%;
+        justify-content: end;
+    }
+    .media_icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+    }
+    .footer_container p {
+        width: 100%;
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }
