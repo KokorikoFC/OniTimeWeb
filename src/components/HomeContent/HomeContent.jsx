@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom"; // si usas react-router
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig"; // ajusta la ruta según tu estructura
 import { motion } from "framer-motion";
+import FAQ from "../FQA.jsx/FQA";
 
 import "./HomeContent.css";
 
@@ -99,6 +100,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
 
     return (
         <div
+            id={`home-content-${id}`}
             className={dynamicClass}
             style={{
                 backgroundColor: bgColor,
@@ -115,7 +117,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 <h3>{subtitle}</h3>
                 <h2>{title}</h2>
 
-                {id === 8 && (
+                {id === 9 && (
                     <div className="download-button">
                         <img
                             src="src/assets/images/button_placeholder.png"
@@ -123,6 +125,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                         />
                     </div>
                 )}
+
+                {id === 8 && <FAQ />}
 
                 <p>{text}</p>
             </motion.div>

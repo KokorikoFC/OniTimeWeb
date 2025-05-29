@@ -15,7 +15,7 @@ const sectionsDataWithImages = sectionsData.map((section) => {
 function Home() {
     return (
         <div className="home-container">
-            <div className="hero">
+            <div className="hero" id="home-hero">
                 <img
                     className="hero_wave"
                     src={whiteWave}

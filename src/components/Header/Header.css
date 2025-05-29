@@ -19,6 +19,9 @@ header.scrolled {
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
 }
 
+.nav-button{
+    cursor: pointer;
+}
 .header_oniTime_logo_containe {
     display: flex;
     align-items: center;
@@ -26,6 +29,7 @@ header.scrolled {
 .header_oniTime_icon {
     height: 50px;
     border-radius: 100%;
+    
 }
 .header_oniTime_logo {
     height: 35px;
@@ -41,4 +45,22 @@ header.scrolled {
     text-decoration: none;
     color: var(--dark_brown);
     transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative; 
+    padding-bottom: 5px; 
+}
+
+.header_nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--green); 
+    transition: width 0.3s ease-in-out; 
+}
+
+.header_nav a:hover::before {
+    width: 100%; 
 }

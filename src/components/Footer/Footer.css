@@ -43,9 +43,15 @@ footer {
     gap: 20px;
 }
 
-.media_icon{
+.media_icon {
     height: 45px;
     width: 45px;
     margin-right: 10px;
     color: var(--dark_brown);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.media_icon:hover {
+    transform: scale(1.1);
 }

@@ -81,6 +81,37 @@
     background-size: cover;
 }
 
+/*container 5*/
+
+.home_content_slider {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+    height: 400px;
+}
+
+.home_style_image {
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.home-content-5 {
+    padding-bottom: 10%;
+}
+.home-content-5 .home_content_text {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.slider_container {
+    display: flex;
+}
+
+
 /*Container 7*/
 .home-content-7 {
     display: flex;
@@ -146,15 +177,31 @@
 .form-buttons img {
     margin: auto;
     width: 100%;
-}
-.form-buttons img:hover {
-    transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
-    cursor: pointer;
 }
 
+.form-buttons img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
 /*Container 8*/
 .home-content-8 {
+    align-items: center;
+    justify-content:center ;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 14%;
+    padding-top: 3%;
+}
+.home-content-8 .home_content_text {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+/*Container 9*/
+.home-content-9 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,52 +211,27 @@
     position: relative;
     padding-bottom: 10%;
 }
-.home-content-8 .home_content_text {
+.home-content-9 .home_content_text {
     width: 90%;
     margin: auto;
     text-align: center;
 }
 
-.home-content-8 .home_content_text p {
+.home-content-9 .home_content_text p {
     margin-top: 5%;
 }
 .download-button {
     height: 50px;
     margin-top: 6%;
+    transition: all 0.3s ease-in-out; 
+}
+
+.download-button img {
+    transition: transform 0.3s ease-in-out; 
 }
 
 .download-button img:hover {
     transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-/*container 5*/
-
-.home_content_slider {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: auto;
-    height: 400px;
-}
-
-.home_style_image {
-    width: auto;
-    height: auto;
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-
-.home-content-5 {
-    padding-bottom: 10%;
-}
-.home-content-5 .home_content_text {
-    width: 85%;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.slider_container {
-    display: flex;
-}

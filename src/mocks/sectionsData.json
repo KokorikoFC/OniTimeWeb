@@ -56,6 +56,13 @@
   {
     "id": 8,
     "bgColor": "var(--light_green)",
+    "subtitle": "FAQ",
+    "title": "PREGUNTAS FRECUENTES",
+    "text": ""
+  },
+  {
+    "id": 9,
+    "bgColor": "white",
     "subtitle": "Descargar",
     "title": "EMPIEZA A CREAR NUEVOS HÁBITOS CON ONITIME HOY",
     "text": "¡Explora esta demo y conoce a Onitime!"
