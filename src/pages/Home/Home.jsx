@@ -6,6 +6,8 @@ import HomeContent from "../../components/HomeContent/HomeContent.jsx";
 import sectionsData from "../../mocks/sectionsData.json";
 import taskScreen from "../../assets/images/task_screen.png"; // Import real
 
+import Chatbot from "../Chatbot.jsx";
+
 const sectionsDataWithImages = sectionsData.map((section) => {
     if (section.id === 1) {
         return { ...section, image: taskScreen };
@@ -39,6 +41,7 @@ function Home() {
                     )
                 )}
             </div>
+            <Chatbot />
         </div>
     );
 }
