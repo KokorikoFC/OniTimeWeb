@@ -76,7 +76,7 @@
     width: 100%;
     gap: 10%;
     padding-bottom: 7%;
-    background-image: url("src/assets/images/diary_background_2.png");
+    background-image: url("/assets/images/diary_background_2.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

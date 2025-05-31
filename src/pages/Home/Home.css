@@ -7,7 +7,7 @@
     width: 100%;
     background-color: rgb(213, 239, 235);
     position: relative;
-    background-image: url('src/assets/images/hero_background.png');
+    background-image: url('/assets/images/hero_background_2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,4 +23,11 @@
     width: 100%;
     height: auto;
     filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.1));
+}
+.hero_logo{
+    height: 200px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

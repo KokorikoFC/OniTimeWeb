@@ -2,10 +2,9 @@ import { FaHome, FaPlus } from "react-icons/fa";
 import "./Home.css";
 import whiteWave from "../../assets/images/white_wave.svg";
 import HomeContent from "../../components/HomeContent/HomeContent.jsx";
-
+import Logo from "../../assets/logos/oniTime_logo.png";
 import sectionsData from "../../mocks/sectionsData.json";
 import taskScreen from "../../assets/images/task_screen.png"; // Import real
-
 import Chatbot from "../Chatbot.jsx";
 
 const sectionsDataWithImages = sectionsData.map((section) => {
@@ -18,6 +17,7 @@ function Home() {
     return (
         <div className="home-container">
             <div className="hero" id="home-hero">
+                <img src={Logo} alt="Onitime logo" className="hero_logo"/>
                 <img
                     className="hero_wave"
                     src={whiteWave}

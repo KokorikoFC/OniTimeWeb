@@ -120,7 +120,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 {id === 9 && (
                     <div className="download-button">
                         <img
-                            src="src/assets/images/button_placeholder.png"
+                            src="/assets/images/button_placeholder.png"
                             alt="form button"
                         />
                     </div>
@@ -194,7 +194,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                     </div>
                     <div className="form-buttons">
                         <img
-                            src="src/assets/images/button_placeholder.png"
+                            src="/assets/images/button_placeholder.png"
                             alt="form button"
                             onClick={handleLogin}
                             style={{ cursor: "pointer" }}
