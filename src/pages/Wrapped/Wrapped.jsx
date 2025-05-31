@@ -57,7 +57,7 @@ function Wrapped() {
         return () => unsubscribe(); // limpiar listener al desmontar
     }, [navigate]);
 
-    if (loading) return <p>Cargando...</p>;
+    if (loading) return 
 
     return (
         <motion.div

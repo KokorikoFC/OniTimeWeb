@@ -119,10 +119,16 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
 
                 {id === 9 && (
                     <div className="download-button">
-                        <img
-                            src="/assets/images/button_placeholder.png"
-                            alt="form button"
-                        />
+                        <a
+                            href="https://firebasestorage.googleapis.com/v0/b/tfgonitime.firebasestorage.app/o/OniTime.apk?alt=media&token=54ce815f-4e6f-49b5-8ba6-6a065ab6b9cd"
+                            download="OniTime.apk"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="/assets/images/download_btn.png"
+                                alt="form button"
+                            />
+                        </a>
                     </div>
                 )}
 
@@ -194,7 +200,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                     </div>
                     <div className="form-buttons">
                         <img
-                            src="/assets/images/button_placeholder.png"
+                            src="/assets/images/discover_btn.png"
                             alt="form button"
                             onClick={handleLogin}
                             style={{ cursor: "pointer" }}

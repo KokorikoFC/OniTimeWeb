@@ -44,6 +44,7 @@ header.scrolled {
 .header_nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 .header_nav a {
@@ -52,7 +53,6 @@ header.scrolled {
     transition: color 0.3s ease;
     cursor: pointer;
     position: relative; 
-    padding-bottom: 5px; 
 }
 
 .header_nav a::before {
