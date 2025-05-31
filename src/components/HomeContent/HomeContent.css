@@ -264,9 +264,11 @@
     .home-content-container p,
     .home-content-container h3 {
         font-size: 1rem;
+        text-align: center;
     }
     .home-content-container h2 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .home_content_text {
@@ -303,8 +305,14 @@
     .faq_container {
         width: 100%;
     }
+    .faq_question p{
+        text-align: left;
+    }
+    .faq_answer span{
+        font-size: 0.9rem;
+    }
     .download-button {
-        width: 100%;
+        width: 70%;
     }
 
 }
