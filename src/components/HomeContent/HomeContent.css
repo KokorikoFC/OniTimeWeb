@@ -15,6 +15,10 @@
     filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.1));
 }
 
+.home-content-9 .home_content_wave  {
+       z-index: 1;
+
+}
 .home_content_text {
     width: 40%;
 }
@@ -117,9 +121,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-bottom: 12%;
+    padding-bottom: 16%;
     flex-direction: column;
-    height: 850px;
+    height: 900px;
     position: relative;
 }
 .home-content-7 .home_content_text {
@@ -144,6 +148,7 @@
     flex-direction: column;
     width: 40%;
     margin: auto;
+    margin-top: 20px;
 }
 .email-form-container label,
 .password-form-container label {
@@ -167,28 +172,6 @@
     border-bottom: 3px solid var(--brown);
 }
 
-.form-buttons {
-    margin: auto;
-    width: 50%;
-    height: auto;
-    margin-top: 50px;
-}
-.form-buttons img {
-    margin: auto;
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
-}
-.form-buttons p{
-    text-align: center;
-    font-size: 1rem;
-color: #f82626;
-    margin-top: 10px;
-}
-
-.form-buttons img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
 
 /*Container 8*/
 .home-content-8 {
@@ -234,7 +217,7 @@ color: #f82626;
 }
 
 .download-button img {
-     margin: auto;
+    margin: auto;
     width: 100%;
     transition: transform 0.3s ease-in-out;
 }
@@ -247,12 +230,19 @@ color: #f82626;
     margin: auto;
     width: 20%;
     height: auto;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .form-buttons img {
     margin: auto;
     width: 100%;
     transition: transform 0.3s ease-in-out;
+}
+
+.form-buttons p {
+    text-align: center;
+    font-size: 1rem;
+    color: #f82626;
+    margin-top: 10px;
 }
 
 .form-buttons img:hover {
@@ -264,7 +254,7 @@ color: #f82626;
     .home-content-container {
         flex-direction: column;
         height: auto;
-        padding-bottom: 20%;
+        padding-bottom: 25%;
         padding-top: 10%;
     }
     .home-content-container p,
@@ -311,14 +301,13 @@ color: #f82626;
     .faq_container {
         width: 100%;
     }
-    .faq_question p{
+    .faq_question p {
         text-align: left;
     }
-    .faq_answer span{
+    .faq_answer span {
         font-size: 0.9rem;
     }
     .download-button {
         width: 70%;
     }
-
 }

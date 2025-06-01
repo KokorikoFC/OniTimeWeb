@@ -5,6 +5,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 .footer_container {
     width: 95%;
