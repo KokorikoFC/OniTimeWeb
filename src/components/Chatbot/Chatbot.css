@@ -1,0 +1,253 @@
+/* Estilos para el botón flotante */
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 63px;
+    border-radius: 50%;
+    background-color: white;
+    color: #473f34;
+    border: 3px solid var(--brown);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+.floating-button:focus,
+.floating-button:active {
+    outline: none;
+    box-shadow: none;
+}
+.floating-button:hover {
+    border: 3px solid var(--brown);
+    background-color: var(--light_green);
+}
+
+.chat-icon {
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* Estilos para el contenedor principal del chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: -500px; /* Oculto inicialmente */
+    right: -500px; /* Oculto inicialmente */
+    width: 380px;
+    height: 500px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    transition: bottom 0.4s ease-out, right 0.4s ease-out, opacity 0.4s ease-out,
+        visibility 0.4s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.chatbot-container.open {
+    bottom: 20px;
+    right: 20px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos para la cabecera */
+.chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: #d5deaf;
+    color: #473f34;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el botón de cerrar */
+.close-button {
+    background: none;
+    border: none;
+    color: #473f34;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0 8px;
+    line-height: 1;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+.close-button:hover {
+    color: #f82626;
+}
+
+/* Estilos para el área del historial de chat */
+.chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilos para los contenedores de mensajes */
+.message-container {
+    margin: 10px 0;
+}
+
+.message-container.user {
+    text-align: right;
+}
+
+.message-container.bot {
+    text-align: left;
+}
+
+/* Estilos para las burbujas de mensaje */
+.message-bubble {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 85%;
+    word-break: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.message-container.user .message-bubble {
+    background-color: #d5deaf;
+    color: #473f34;
+}
+
+.message-container.bot .message-bubble {
+    background-color: #987d625f;
+    color: #473f34;
+}
+
+.message-container.bot .message-bubble.loading {
+    font-style: italic;
+}
+
+/* Estilos para el mensaje de error */
+.error-message {
+    color: #f82626;
+    text-align: center;
+    padding: 0 15px 5px;
+    font-size: 12px;
+}
+
+/* Estilos para el área de input */
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Estilos para el input de mensaje */
+.message-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #473f34;
+}
+
+/* Estilos para el botón de enviar */
+.send-button {
+    padding: 12px 20px;
+    background-color: #d5deaf;
+    color: #473f34;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+    font-weight: 600;
+}
+
+.send-button:hover {
+    background-color: #b2bd79;
+}
+
+.send-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Estilos responsive (puedes ajustar los puntos de quiebre según necesites) */
+@media (max-width: 600px) {
+    .floating-button {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 53px;
+        font-size: 20px;
+        border-width: 2px;
+    }
+
+    .chatbot-container {
+        width: 95%;
+        height: 85%;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 12px;
+    }
+
+    .chatbot-header {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .close-button {
+        font-size: 24px;
+        padding: 0 6px;
+    }
+
+    .chat-history {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .message-bubble {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 15px;
+    }
+
+    .message-input {
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .send-button {
+        font-size: 1rem;
+        padding: 10px 15px;
+        border-radius: 20px;
+        min-width: 70px;
+    }
+
+    .input-area {
+        padding: 20px 15px;
+    }
+}

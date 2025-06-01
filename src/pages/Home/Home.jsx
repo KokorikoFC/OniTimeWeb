@@ -5,7 +5,8 @@ import HomeContent from "../../components/HomeContent/HomeContent.jsx";
 import Logo from "../../assets/logos/oniTime_logo.png";
 import sectionsData from "../../mocks/sectionsData.json";
 import taskScreen from "../../assets/images/task_screen.png"; // Import real
-import Chatbot from "../Chatbot.jsx";
+import Chatbot from "../../components/Chatbot/Chatbot.jsx";
+
 
 const sectionsDataWithImages = sectionsData.map((section) => {
     if (section.id === 1) {

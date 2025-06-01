@@ -12,12 +12,13 @@ import "./Wrapped.css";
 import coin from "../../assets/images/coin.png";
 import greenWave from "../../assets/images/green_wave.svg";
 import brownWave from "../../assets/images/brown_wave.svg";
-import { motion } from "framer-motion";
 import happy_face from "../../assets/images/emotionface_happy.png";
 import neutral_face from "../../assets/images/emotionface_neutral.png";
 import sad_face from "../../assets/images/emotionface_sad.png";
 import very_happy_face from "../../assets/images/emotionface_veryhappy.png";
 import very_sad_face from "../../assets/images/emotionface_verysad.png";
+import pet_onigiri from "../../assets/images/onigiri_pet.png";
+import FadeInSection from "../../components/FadeInSection";
 
 function Wrapped() {
     const [userData, setUserData] = useState(null);
@@ -45,7 +46,7 @@ function Wrapped() {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (!user) {
-                navigate("/"); // Redirige a Home si no hay usuario
+                navigate("/");
                 return;
             }
 
@@ -66,61 +67,39 @@ function Wrapped() {
             }
         });
 
-        return () => unsubscribe(); // limpiar listener al desmontar
+        return () => unsubscribe();
     }, [navigate]);
 
     if (loading) return;
 
     return (
-        <motion.div
-            className="wrapped-container"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-            <motion.div
-                className="wrapped-first-cont"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.3 }}
-            >
-                <motion.div
-                    className="wrapped-title-container"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
+        <div className="wrapped-container">
+            <FadeInSection className="wrapped-first-cont">
+                <FadeInSection className="wrapped-title-container">
                     <h3>Wrapped</h3>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        {userData.userName}, ESTE AÑO {userData.yearRef} HAN
+                    <h1>
+                        {userData?.userName}, ESTE AÑO {userData?.yearRef} HAN
                         SUCEDIDO MUCHAS COSAS EN ONITIME
-                    </motion.h1>
-                </motion.div>
-                <motion.div
-                    className="activeDays-container"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    <motion.div
-                        className="activeDays-innerCont"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.1 }}
-                    >
-                        <p>{userData.totalActiveDays} Días</p>
-                    </motion.div>
-                </motion.div>
-            </motion.div>
+                    </h1>
+                </FadeInSection>
+                <FadeInSection className="activeDays-container">
+                    <img
+                        src={pet_onigiri}
+                        alt="decorative onigiri"
+                        className="pet_onigiri"
+                    />
+                    <div className="activeDays-innerCont">
+                        <p>{userData?.totalActiveDays} Días</p>
+                    </div>
+                </FadeInSection>
+                <FadeInSection className="motivation-container">
+                    <p className="motivation_text">
+                        Cada quien decide cómo vivir. Tú elegiste dedicar tiempo
+                        para ti, y eso te hace realmente genial. <br />
+                        ¡Vamos a celebrarlo con confeti!
+                    </p>
+                </FadeInSection>
+            </FadeInSection>
 
             <div className="wave-cont">
                 <img
@@ -136,114 +115,71 @@ function Wrapped() {
             </div>
 
             <div className="second-inner-container">
-                <motion.div
-                    className="wrapped-subtitle"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
+                <FadeInSection className="wrapped-subtitle">
                     <hr />
-                    <motion.h2
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
+                    <h2>
                         TU DIARIO EMOCIONAL HABLA POR TI. MIRA TODO LO QUE HA
                         CONTADO ESTE AÑO
-                    </motion.h2>
+                    </h2>
                     <hr />
-                </motion.div>
-                <motion.div
-                    className="emotions-container"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                        duration: 0.6,
-                        ease: "easeOut",
-                        staggerChildren: 0.1,
-                    }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
+                </FadeInSection>
+                <FadeInSection className="emotions-container">
                     <ul>
-                        {Object.entries(moodCounts).map(([mood, count]) => (
-                            <motion.li
-                                key={mood}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    ease: "easeOut",
-                                }}
-                                viewport={{ once: true, amount: 0.1 }}
-                                className="emotion-item"
-                            >
-                                {moodImages[mood] && (
-                                    <img
-                                        src={moodImages[mood]}
-                                        alt={mood}
-                                        className="emotion-icon"
-                                    />
-                                )}
-                                <div className="emotion-text">
-                                    <p className="emotion-name">
-                                        {moodLabels[mood]}
-                                    </p>
-                                    <p className="emotion-days">{count} días</p>
-                                </div>
-                            </motion.li>
-                        ))}
+                        {Object.entries(moodCounts || {}).map(
+                            ([mood, count]) => (
+                                <FadeInSection
+                                    key={mood}
+                                    className="emotion-item"
+                                >
+                                    {moodImages[mood] && (
+                                        <img
+                                            src={moodImages[mood]}
+                                            alt={mood}
+                                            className="emotion-icon"
+                                        />
+                                    )}
+                                    <div className="emotion-text">
+                                        <p className="emotion-name">
+                                            {moodLabels[mood]}
+                                        </p>
+                                        <p className="emotion-days">
+                                            {count} días
+                                        </p>
+                                    </div>
+                                </FadeInSection>
+                            )
+                        )}
                     </ul>
 
-                    <motion.div
-                        className="entries-container"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <p className="diary-counter">
-                            ¡Has escrito en tu diario {userData.diaryEntryYear}{" "}
-                            días del año!
+                    <FadeInSection className="motivation-container">
+                        <p className="motivation_text">
+                            Tus pensamientos tomaron forma en{" "}
+                            {userData?.diaryEntryYear} días este año. ¡Cada uno
+                            cuenta!
+                        </p>
+                    </FadeInSection>
+                </FadeInSection>
+                <FadeInSection className="wrapped-subtitle">
+                    <hr />
+                    <h2>CONVERSACIONES QUE DEJARON HUELLA</h2>
+                    <hr />
+                </FadeInSection>
+                <FadeInSection className="chat-container">
+                    <div className="chatText">
+                        <p>
+                            Mensajes con Oni:{" "}
+                            <span>
+                                {userData?.messagesOniYear} interacciones
+                            </span>
                         </p>{" "}
-                    </motion.div>
-                </motion.div>
-                <motion.div
-                    className="wrapped-subtitle"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    <hr />
-                    <motion.h2
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        CONVERSACIONES QUE DEJARON HUELLA
-                    </motion.h2>
-                    <hr />
-                </motion.div>
-                <motion.div
-                    className="chat-container"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    <motion.div
-                        className="chatText"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.1 }}
-                    >
-                        <p>Mensajes con Oni: {userData.messagesOniYear}</p>{" "}
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </FadeInSection>
+                <FadeInSection className="motivation-container">
+                    <p className="motivation_text">
+                        Abrirte en palabras es un acto de valentía. Gracias por
+                        dejar que Oni te acompañe.
+                    </p>
+                </FadeInSection>
             </div>
 
             <div className="wrapped-third-cont">
@@ -260,86 +196,81 @@ function Wrapped() {
                     />
                 </div>
                 <div className="third-inner-container">
-                    <motion.div
-                        className="wrapped-subtitle"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
+                    <FadeInSection className="wrapped-subtitle">
                         <hr />
-                        <motion.h2
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            TUS LOGROS BRILLAN COMO MONEDAS DE ORO
-                        </motion.h2>
+                        <h2>TUS LOGROS BRILLAN COMO MONEDAS DE ORO</h2>
                         <hr />
-                    </motion.div>
-                    <motion.div
-                        className="coins-container"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <motion.div
-                            className="coinText"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.1 }}
-                        >
+                    </FadeInSection>
+                    <FadeInSection className="coins-container">
+                        <div className="coinText">
                             <p>
                                 Has obtenido un total de:
-                                <strong> {userData.coinsYear}</strong>
+                                <span> {userData?.coinsYear}</span>
                             </p>
                             <img src={coin} alt="" />
-                        </motion.div>
-                    </motion.div>
-                    <motion.div
-                        className="wrapped-subtitle"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
+                        </div>
+                    </FadeInSection>
+                    <FadeInSection className="motivation-container">
+                        <p className="motivation_text">
+                            Cada logro, por pequeño que parezca, es una señal de
+                            avance. ¡Mereces celebrar!
+                        </p>
+                    </FadeInSection>
+
+                    <FadeInSection className="wrapped-subtitle">
                         <hr />
-                        <motion.h2
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            VOLVER UNA Y OTRA VEZ TAMBIÉN ES AVANZAR
-                        </motion.h2>
+                        <h2>VOLVER UNA Y OTRA VEZ TAMBIÉN ES AVANZAR</h2>
                         <hr />
-                    </motion.div>
-                    <motion.div
-                        className="streak-container"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <motion.div
-                            className="coinText"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.1 }}
-                        >
+                    </FadeInSection>
+                    <FadeInSection className="streak-container">
+                        <div className="coinText">
                             <p>
                                 Tu racha más larga ha sido de:
-                                <strong> {longestStreak} días</strong>
+                                <span> {longestStreak} días</span>
                             </p>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </FadeInSection>
+                    <FadeInSection className="motivation-container">
+                        <p className="motivation_text">
+                            No se trata de no caer, sino de seguir volviendo.
+                            ¡Eso es fuerza de verdad!
+                        </p>
+                    </FadeInSection>
                 </div>
             </div>
-        </motion.div>
+            <div className="confetti-area">
+                {Array.from({ length: 100 }).map((_, i) => {
+                    const left = Math.random() * 100;
+                    const duration = 3 + Math.random() * 2;
+                    const delay = Math.random() * 5;
+                    const colors = [
+                        "#f94144",
+                        "#f3722c",
+                        "#f9c74f",
+                        "#90be6d",
+                        "#43aa8b",
+                        "#577590",
+                    ];
+                    const color =
+                        colors[Math.floor(Math.random() * colors.length)];
+                    const rotation = Math.random() * 360;
+
+                    return (
+                        <span
+                            key={i}
+                            className="confetti"
+                            style={{
+                                left: `${left}%`,
+                                backgroundColor: color,
+                                animationDuration: `${duration}s`,
+                                animationDelay: `${-delay}s`,
+                                transform: `rotate(${rotation}deg)`,
+                            }}
+                        />
+                    );
+                })}
+            </div>
+        </div>
     );
 }
 

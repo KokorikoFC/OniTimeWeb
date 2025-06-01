@@ -40,6 +40,8 @@ footer {
     flex-direction: column;
     background-color: var(--light_green);
     padding-bottom: 200px;
+        width: 100%;
+
 }
 
 .wrapped-third-cont .wave-cont {
@@ -83,7 +85,7 @@ footer {
 }
 
 .wrapped-container h3 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: var(--green);
     margin: 0;
 }
@@ -92,15 +94,14 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 85%;
     gap: 30px;
     text-align: center;
-    margin-top: 120px;
+    margin-top: 150px;
     margin-bottom: 80px;
 }
 .wrapped-subtitle hr {
     width: 25%;
-    height: 2px;
     margin: 0;
     border: 2px solid var(--dark_brown);
     border-radius: 10px;
@@ -108,17 +109,24 @@ footer {
 .activeDays-container {
     height: 250px;
     width: 60%;
-    margin-top: 80px;
+    margin-top: 160px;
     border: 5px solid var(--dark_brown);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light_green);
+    background-color: var(--brown);
     border-radius: 16px;
+    position: relative;
 }
 
+.pet_onigiri {
+    position: absolute;
+    top: -134px;
+    right: 10%;
+    height: 150px;
+}
 .activeDays-innerCont {
-    border: 5px solid var(--dark_brown);
+    border: 5px solid var(--brown);
     width: 95%;
     height: 80%;
     background-color: white;
@@ -131,6 +139,23 @@ footer {
     font-size: 5rem;
     font-weight: 700;
 }
+.motivation_text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+
+.emotions-container {
+    display: flex;
+    justify-content: center; 
+    margin-left: auto;
+    margin-right: auto; 
+    width: 100%;
+    flex-direction: column;
+}
+
 .emotions-container ul {
     display: flex;
     flex-wrap: wrap;
@@ -164,8 +189,8 @@ footer {
     border: 5px solid var(--dark_brown);
     background-color: white;
     border-radius: 16px;
-    background-image: url("/assets/images/green_wave.svg");
-    background-size: 100%;
+    background-image: url("/assets/images/brown_wave.svg");
+    background-size: 101%;
     background-position: bottom;
     background-repeat: no-repeat;
 }
@@ -197,23 +222,20 @@ footer {
 /* Días */
 .emotion-days {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 10px;
+    color: var(--brown);
 }
 
-.diary-counter {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
 .chat-container {
-    background-image: url("/assets/images/green_wave.svg");
-    background-size: 100%;
-    background-position: bottom;
+    background-image: url("/assets/images/brown_wave.svg");
+    background-size: 101%;
+    background-position-y: calc(100% + 5px);
     background-repeat: no-repeat;
 }
 .coins-container,
 .streak-container {
-    background-image: url("/assets/images/brown_wave.svg");
+    background-image: url("/assets/images/green_wave.svg");
     background-size: 101%;
     background-position-y: calc(100% + 5px);
     background-repeat: no-repeat;
@@ -230,6 +252,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 .coinText,
@@ -246,10 +269,47 @@ footer {
     font-weight: bold;
     margin: 0;
 }
+.coinText span,
+.streakText span,
+.chatText span {
+    color: var(--brown);
+}
 .coinText img {
-    height: 60px;
-    width: 60px;
-    margin-right: 10px;
+    height: 55px;
+    width: 55px;
+}
+
+/*-------------CONFETTI-----------*/
+.confetti-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 16px;
+    opacity: 0.8;
+    transform: rotate(0deg);
+    animation: confetti-fall linear infinite;
+    border-radius: 2px;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -265,6 +325,11 @@ footer {
 
     .wrapped-subtitle {
         gap: 5px;
+        margin-bottom: 30px;
+        margin-top: 80px;
+    }
+    .wave-cont {
+        height: 100px;
     }
     .activeDays-container {
         height: 180px;
@@ -273,23 +338,44 @@ footer {
     .activeDays-innerCont {
         height: 90%;
     }
-    .wrapped-first-cont {
-        height: 70vh;
+    .motivation_text {
+        font-size: 1.2rem;
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
     }
-    .activeDays-container p{
-        font-size: 4rem;
+    .pet_onigiri {
+        height: 120px;
+        top: -107px;
+    }
+    .wrapped-first-cont {
+        height: 100vh;
+        padding-top: 50px;
+    }
+    .activeDays-container p {
+        font-size: 3.4rem;
     }
     .second-inner-container,
     .third-inner-container {
-        padding-bottom: 1px;
+        padding-bottom: 0px;
+    }
+    .emotion-item {
+        height: 140px;
+    }
+    .emotion-icon {
+        height: 100%;
+        width: 30%;
     }
     .emotions-container ul {
         gap: 50px;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        padding-inline-start: 0px;
     }
     .emotion-name {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-    .entries-container{
+    .entries-container {
         margin-bottom: 0;
     }
     .chat-container {
@@ -310,7 +396,11 @@ footer {
         height: 40px;
         width: 40px;
     }
-    .third-inner-container{
+    .third-inner-container {
         padding-bottom: 150px;
+    }
+    .confetti {
+        width: 4px;
+        height: 8px;
     }
 }

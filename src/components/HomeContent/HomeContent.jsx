@@ -12,6 +12,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig"; // ajusta la ruta según tu estructura
 import { motion } from "framer-motion";
 import FAQ from "../FQA.jsx/FQA";
+import FadeInSection from "../../components/FadeInSection";
 
 import "./HomeContent.css";
 
@@ -19,6 +20,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    const [loginError, setLoginError] = useState("");
 
     const handleLogin = async () => {
         try {
@@ -29,10 +32,11 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
             );
             const user = userCredential.user;
             console.log("Usuario autenticado:", user.uid);
-            navigate("/wrapped"); // redirigir al Wrapped
+            setLoginError(""); // limpia errores anteriores
+            navigate("/wrapped");
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
-            alert("Correo o contraseña incorrectos");
+            setLoginError("Correo o contraseña incorrectos");
         }
     };
 
@@ -205,6 +209,11 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                             onClick={handleLogin}
                             style={{ cursor: "pointer" }}
                         />
+                        {loginError && (
+                            <p>
+                                {loginError}
+                            </p>
+                        )}
                     </div>
                 </motion.div>
             )}
