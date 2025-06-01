@@ -15,13 +15,13 @@ align-items: center;
 }
 
 .goBackArrow img {
-    height: 50%;
-    transition: transform 0.3s ease; /* Asegura animación suave */
+    height: 40%;
+    transition: transform 0.3s ease;
 }
 
 .goBackArrow img:hover {
     cursor: pointer;
-    transform: scale(1.05) translateX(-5px); /* Escala + movimiento a la izquierda */
+    transform: scale(1.05) translateX(-5px);
 }
 
 .wrapped-container {

@@ -93,19 +93,7 @@
     color: #f82626;
 }
 
-/* Estilos para el área del historial de chat */
-.chat-history {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #eee;
-}
 
-/* Estilos para los contenedores de mensajes */
-.message-container {
-    margin: 10px 0;
-}
 
 .message-container.user {
     text-align: right;
@@ -123,6 +111,7 @@
     max-width: 85%;
     word-break: break-word;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: left;
 }
 
 .message-container.user .message-bubble {
@@ -139,6 +128,41 @@
     font-style: italic;
 }
 
+.chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.message-container {
+    margin: 5px 0; 
+    width: fit-content; 
+    max-width: 85%; 
+}
+
+.message-container.user {
+    align-self: flex-end;
+}
+
+.message-bubble {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    word-break: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    background-color: #987d625f; /* Estilo por defecto (bot) */
+    color: #473f34;
+}
+
+.message-container.user .message-bubble {
+    background-color: #d5deaf;
+}
 /* Estilos para el mensaje de error */
 .error-message {
     color: #f82626;
