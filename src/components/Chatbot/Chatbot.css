@@ -104,20 +104,7 @@
 }
 
 /* Estilos para las burbujas de mensaje */
-.message-bubble {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 20px;
-    max-width: 85%;
-    word-break: break-word;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    text-align: left;
-}
 
-.message-container.user .message-bubble {
-    background-color: #d5deaf;
-    color: #473f34;
-}
 
 .message-container.bot .message-bubble {
     background-color: #987d625f;
@@ -134,35 +121,45 @@
     padding: 15px;
     background-color: #f9f9f9;
     border-bottom: 1px solid #eee;
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default align left for bot messages */
 }
 
 .message-container {
-    margin: 5px 0; 
-    width: fit-content; 
-    max-width: 85%; 
+    margin: 5px 0;
+    max-width: 85%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    align-self: flex-end; 
 }
 
-.message-container.user {
-    align-self: flex-end;
+.message-container.bot {
+    align-items: flex-start; 
+    align-self: flex-start;
 }
 
 .message-bubble {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 20px;
-    word-break: break-word;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     text-align: left;
-    background-color: #987d625f; /* Estilo por defecto (bot) */
+    background-color: #987d625f;
     color: #473f34;
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    margin: 0; 
 }
 
 .message-container.user .message-bubble {
     background-color: #d5deaf;
+    text-align: left;
+    margin: 0; 
 }
+
 /* Estilos para el mensaje de error */
 .error-message {
     color: #f82626;
