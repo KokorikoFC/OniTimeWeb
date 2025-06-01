@@ -5,6 +5,25 @@ footer {
     display: none;
 }
 
+.goBackArrow{
+width:  100%;
+height: 150px;
+padding: 0 50px;
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+.goBackArrow img {
+    height: 50%;
+    transition: transform 0.3s ease; /* Asegura animación suave */
+}
+
+.goBackArrow img:hover {
+    cursor: pointer;
+    transform: scale(1.05) translateX(-5px); /* Escala + movimiento a la izquierda */
+}
+
 .wrapped-container {
     min-height: 100vh;
     width: 100vw;
@@ -20,9 +39,9 @@ footer {
 }
 
 .wrapped-first-cont {
-    height: 100vh;
+    height: 90vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
 }
@@ -332,8 +351,9 @@ footer {
         height: 100px;
     }
     .activeDays-container {
-        height: 180px;
+        height: 140px;
         width: 85%;
+        margin-top: 80px;
     }
     .activeDays-innerCont {
         height: 90%;
@@ -345,12 +365,13 @@ footer {
         margin-top: 30px;
     }
     .pet_onigiri {
-        height: 120px;
-        top: -107px;
+        height: 90px;
+        top: -82px;
     }
     .wrapped-first-cont {
-        height: 100vh;
-        padding-top: 50px;
+        height: 75vh;
+            justify-content: center;
+
     }
     .activeDays-container p {
         font-size: 3.4rem;
@@ -403,4 +424,11 @@ footer {
         width: 4px;
         height: 8px;
     }
+    .goBackArrow{
+        height: 100px;
+        padding: 0 20px;
+    }
+  
+
+
 }

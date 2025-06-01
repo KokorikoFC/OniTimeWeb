@@ -19,6 +19,7 @@ import very_happy_face from "../../assets/images/emotionface_veryhappy.png";
 import very_sad_face from "../../assets/images/emotionface_verysad.png";
 import pet_onigiri from "../../assets/images/onigiri_pet.png";
 import FadeInSection from "../../components/FadeInSection";
+import goBackArrow from "../../assets/images/ui_gobackarrow_brown.png";
 
 function Wrapped() {
     const [userData, setUserData] = useState(null);
@@ -41,6 +42,10 @@ function Wrapped() {
         triste: sad_face,
         fantastico: very_happy_face,
         deprimido: very_sad_face,
+    };
+
+    const handleGoToHome = () => {
+        navigate("/"); // Navega a la ruta raíz
     };
 
     useEffect(() => {
@@ -74,6 +79,14 @@ function Wrapped() {
 
     return (
         <div className="wrapped-container">
+            <FadeInSection className="goBackArrow">
+                <img
+                    src={goBackArrow}
+                    alt="Volver al inicio"
+                    onClick={handleGoToHome}
+                    style={{ cursor: "pointer" }}
+                />
+            </FadeInSection>
             <FadeInSection className="wrapped-first-cont">
                 <FadeInSection className="wrapped-title-container">
                     <h3>Wrapped</h3>
@@ -239,7 +252,7 @@ function Wrapped() {
                 </div>
             </div>
             <div className="confetti-area">
-                {Array.from({ length: 100 }).map((_, i) => {
+                {Array.from({ length: 30 }).map((_, i) => {
                     const left = Math.random() * 100;
                     const duration = 3 + Math.random() * 2;
                     const delay = Math.random() * 5;
