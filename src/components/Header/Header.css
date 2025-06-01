@@ -8,7 +8,7 @@ header {
     z-index: 1000;
     width: 100%;
     top: 0;
-    background-color: transparent; 
+    background-color: transparent;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     box-sizing: border-box;
@@ -19,7 +19,7 @@ header.scrolled {
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
 }
 
-.nav-button{
+.nav-button {
     cursor: pointer;
     height: 40px;
     display: flex;
@@ -34,7 +34,6 @@ header.scrolled {
 .header_oniTime_icon {
     height: 50px;
     border-radius: 100%;
-    
 }
 .header_oniTime_logo {
     height: 35px;
@@ -45,39 +44,47 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 .header_nav a {
     text-decoration: none;
     color: var(--dark_brown);
     transition: color 0.3s ease;
     cursor: pointer;
-    position: relative; 
+    position: relative;
 }
 
 .header_nav a::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: var(--green); 
-    transition: width 0.3s ease-in-out; 
+    background-color: var(--green);
+    transition: width 0.3s ease-in-out;
 }
 
 .header_nav a:hover::before {
-    width: 100%; 
+    width: 100%;
 }
 
 @media (max-width: 768px) {
-header{
-    padding: 0 20px;
-}
-.header_oniTime_logo {
-    display: none;
-}
-.header_nav {
-    font-size: 0.9rem;
-}
+    header {
+        padding: 0 20px;
     }
+    .header_oniTime_logo {
+        display: none;
+    }
+    .header_nav {
+        font-size: 0.9rem;
+            gap: 16px;
+
+    }
+    .header_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+}

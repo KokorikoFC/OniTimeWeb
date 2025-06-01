@@ -5,7 +5,6 @@
 .hero {
     height: 120vh;
     width: 100%;
-    background-color: rgb(213, 239, 235);
     position: relative;
     background-image: url("/assets/images/hero_background_2.png");
     background-size: cover;

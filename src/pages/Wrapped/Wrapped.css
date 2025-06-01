@@ -16,10 +16,10 @@ footer {
     justify-content: start;
     align-items: center;
     color: var(--dark_brown);
-    background-color: white ;
+    background-color: white;
 }
 
-.wrapped-first-cont{
+.wrapped-first-cont {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -39,8 +39,7 @@ footer {
     align-items: center;
     flex-direction: column;
     background-color: var(--light_green);
-        padding-bottom: 200px;
-
+    padding-bottom: 200px;
 }
 
 .wrapped-third-cont .wave-cont {
@@ -59,7 +58,7 @@ footer {
 .decorative_wave {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
 }
 .decorative_wave2 {
     width: 100%;
@@ -68,6 +67,7 @@ footer {
     opacity: 0.5;
     bottom: 0;
 }
+
 .wrapped-title-container {
     text-align: center;
     width: 70%;
@@ -77,6 +77,9 @@ footer {
     margin: 0;
     text-align: center;
     margin-top: 20px;
+}
+.wrapped-container h2 {
+    font-size: 1.8rem;
 }
 
 .wrapped-container h3 {
@@ -137,22 +140,6 @@ footer {
     margin: 0 auto;
     width: 80%;
 }
-.emotions-container li {
-    position: relative;
-    height: 180px;
-    width: 400px;
-    list-style: none;
-    border: 5px solid var(--dark_brown);
-    background-color: white;
-    border-radius: 16px;
-}
-
-.emotions-container li p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .entries-container {
     width: 70%;
@@ -165,13 +152,74 @@ footer {
     font-size: 1.5rem;
     font-weight: 500;
 }
-.diary-counter{
-    font-size: 1.5rem;
-    font-weight: 600;
-
+/* Estilo para cada item */
+.emotion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    height: 180px;
+    width: 400px;
+    list-style: none;
+    border: 5px solid var(--dark_brown);
+    background-color: white;
+    border-radius: 16px;
+    background-image: url("/assets/images/green_wave.svg");
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
+/* Imagen */
+.emotion-icon {
+    height: 70%;
+    width: 45%;
+    object-fit: contain;
+}
+
+/* Contenedor del texto */
+.emotion-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 55%;
+}
+
+/* Nombre de emoción */
+.emotion-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Días */
+.emotion-days {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.diary-counter {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.chat-container {
+    background-image: url("/assets/images/green_wave.svg");
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
 .coins-container,
+.streak-container {
+    background-image: url("/assets/images/brown_wave.svg");
+    background-size: 101%;
+    background-position-y: calc(100% + 5px);
+    background-repeat: no-repeat;
+}
+.coins-container,
+.chat-container,
 .streak-container {
     height: 150px;
     width: 40%;
@@ -184,7 +232,9 @@ footer {
     align-items: center;
 }
 
-.coinText {
+.coinText,
+.streakText,
+.chatText {
     font-size: 1.7rem;
     width: 100%;
     text-align: center;
@@ -193,9 +243,74 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    font-weight: bold;
+    margin: 0;
 }
 .coinText img {
     height: 60px;
     width: 60px;
     margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .wrapped-container h1 {
+        font-size: 1.5rem;
+    }
+    .wrapped-container p {
+        text-align: center;
+    }
+    .wrapped-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .wrapped-subtitle {
+        gap: 5px;
+    }
+    .activeDays-container {
+        height: 180px;
+        width: 85%;
+    }
+    .activeDays-innerCont {
+        height: 90%;
+    }
+    .wrapped-first-cont {
+        height: 70vh;
+    }
+    .activeDays-container p{
+        font-size: 4rem;
+    }
+    .second-inner-container,
+    .third-inner-container {
+        padding-bottom: 1px;
+    }
+    .emotions-container ul {
+        gap: 50px;
+    }
+    .emotion-name {
+        font-size: 1.5rem;
+    }
+    .entries-container{
+        margin-bottom: 0;
+    }
+    .chat-container {
+        width: 75%;
+        height: 120px;
+    }
+    .coins-container,
+    .streak-container {
+        width: 90%;
+        height: 120px;
+    }
+    .coinText,
+    .streakText,
+    .chatText {
+        font-size: 1.3rem;
+    }
+    .coinText img {
+        height: 40px;
+        width: 40px;
+    }
+    .third-inner-container{
+        padding-bottom: 150px;
+    }
 }

@@ -13,6 +13,11 @@ import coin from "../../assets/images/coin.png";
 import greenWave from "../../assets/images/green_wave.svg";
 import brownWave from "../../assets/images/brown_wave.svg";
 import { motion } from "framer-motion";
+import happy_face from "../../assets/images/emotionface_happy.png";
+import neutral_face from "../../assets/images/emotionface_neutral.png";
+import sad_face from "../../assets/images/emotionface_sad.png";
+import very_happy_face from "../../assets/images/emotionface_veryhappy.png";
+import very_sad_face from "../../assets/images/emotionface_verysad.png";
 
 function Wrapped() {
     const [userData, setUserData] = useState(null);
@@ -23,11 +28,18 @@ function Wrapped() {
     const navigate = useNavigate();
 
     const moodLabels = {
-        masomenos: "Mas o menos",
+        masomenos: "Más o menos",
         fantastico: "Fantástico",
         deprimido: "Deprimido",
         feliz: "Feliz",
         triste: "Triste",
+    };
+    const moodImages = {
+        feliz: happy_face,
+        masomenos: neutral_face,
+        triste: sad_face,
+        fantastico: very_happy_face,
+        deprimido: very_sad_face,
     };
 
     useEffect(() => {
@@ -57,7 +69,7 @@ function Wrapped() {
         return () => unsubscribe(); // limpiar listener al desmontar
     }, [navigate]);
 
-    if (loading) return 
+    if (loading) return;
 
     return (
         <motion.div
@@ -110,125 +122,129 @@ function Wrapped() {
                 </motion.div>
             </motion.div>
 
-            <motion.div
-                className="wrapper-second-cont"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.3 }}
-            >
-                <div className="wave-cont">
-                    <img
-                        src={greenWave}
-                        alt="decorative wave"
-                        className="decorative_wave"
-                    />
-                    <img
-                        src={greenWave}
-                        alt="decorative wave"
-                        className="decorative_wave2"
-                    />
-                </div>
+            <div className="wave-cont">
+                <img
+                    src={greenWave}
+                    alt="decorative wave"
+                    className="decorative_wave"
+                />
+                <img
+                    src={greenWave}
+                    alt="decorative wave"
+                    className="decorative_wave2"
+                />
+            </div>
 
-                <div className="second-inner-container">
-                    <motion.div
-                        className="wrapped-subtitle"
-                        initial={{ opacity: 0, y: 30 }}
+            <div className="second-inner-container">
+                <motion.div
+                    className="wrapped-subtitle"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <hr />
+                    <motion.h2
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <hr />
-                        <motion.h2
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            TU DIARIO EMOCIONAL HABLA POR TI. MIRA TODO LO QUE
-                            HA CONTADO ESTE AÑO
-                        </motion.h2>
-                        <hr />
-                    </motion.div>
-                    <motion.div
-                        className="emotions-container"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.6,
-                            ease: "easeOut",
-                            staggerChildren: 0.1,
-                        }}
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <ul>
-                            {Object.entries(moodCounts).map(([mood, count]) => (
-                                <motion.li
-                                    key={mood}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.5,
-                                        ease: "easeOut",
-                                    }}
-                                    viewport={{ once: true, amount: 0.1 }}
-                                >
-                                    <p>
-                                        {moodLabels[mood] || mood}: {count}
+                        TU DIARIO EMOCIONAL HABLA POR TI. MIRA TODO LO QUE HA
+                        CONTADO ESTE AÑO
+                    </motion.h2>
+                    <hr />
+                </motion.div>
+                <motion.div
+                    className="emotions-container"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.6,
+                        ease: "easeOut",
+                        staggerChildren: 0.1,
+                    }}
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <ul>
+                        {Object.entries(moodCounts).map(([mood, count]) => (
+                            <motion.li
+                                key={mood}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    ease: "easeOut",
+                                }}
+                                viewport={{ once: true, amount: 0.1 }}
+                                className="emotion-item"
+                            >
+                                {moodImages[mood] && (
+                                    <img
+                                        src={moodImages[mood]}
+                                        alt={mood}
+                                        className="emotion-icon"
+                                    />
+                                )}
+                                <div className="emotion-text">
+                                    <p className="emotion-name">
+                                        {moodLabels[mood]}
                                     </p>
-                                </motion.li>
-                            ))}
-                        </ul>
-                        <motion.div
-                            className="entries-container"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            <p className="diary-counter">
-                                Has escrito en tu diario{" "}
-                                {userData.diaryEntryYear} días del año!
-                            </p>{" "}
-                        </motion.div>
-                    </motion.div>
+                                    <p className="emotion-days">{count} días</p>
+                                </div>
+                            </motion.li>
+                        ))}
+                    </ul>
+
                     <motion.div
-                        className="wrapped-subtitle"
+                        className="entries-container"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <hr />
-                        <motion.h2
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                        >
-                            CONVERSACIONES QUE DEJARON HUELLA
-                        </motion.h2>
-                        <hr />
+                        <p className="diary-counter">
+                            ¡Has escrito en tu diario {userData.diaryEntryYear}{" "}
+                            días del año!
+                        </p>{" "}
                     </motion.div>
-                    <motion.div
-                        className="coins-container"
-                        initial={{ opacity: 0, y: 30 }}
+                </motion.div>
+                <motion.div
+                    className="wrapped-subtitle"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <hr />
+                    <motion.h2
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        transition={{ duration: 0.7, ease: "easeOut" }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <motion.div
-                            className="coinText"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.1 }}
-                        >
-                            <p>Mensajes con Oni: {userData.messagesOniYear}</p>{" "}
-                        </motion.div>
+                        CONVERSACIONES QUE DEJARON HUELLA
+                    </motion.h2>
+                    <hr />
+                </motion.div>
+                <motion.div
+                    className="chat-container"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <motion.div
+                        className="chatText"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.1 }}
+                    >
+                        <p>Mensajes con Oni: {userData.messagesOniYear}</p>{" "}
                     </motion.div>
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
 
             <div className="wrapped-third-cont">
                 <div className="wave-cont">
@@ -278,7 +294,7 @@ function Wrapped() {
                         >
                             <p>
                                 Has obtenido un total de:
-                                <strong>{userData.coinsYear}</strong>
+                                <strong> {userData.coinsYear}</strong>
                             </p>
                             <img src={coin} alt="" />
                         </motion.div>
@@ -317,7 +333,7 @@ function Wrapped() {
                         >
                             <p>
                                 Tu racha más larga ha sido de:
-                                <strong>{longestStreak} días</strong>
+                                <strong> {longestStreak} días</strong>
                             </p>
                         </motion.div>
                     </motion.div>
