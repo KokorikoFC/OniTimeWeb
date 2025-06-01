@@ -8,9 +8,9 @@ function Chatbot() {
     const [error, setError] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
 
-    const primaryColor = "#d5deaf";
-    const textColor = "#473f34";
-    const accentColor = "#808080";
+    const primaryColor = "#d5deaf"; // No se usan directamente en el render, pero se mantienen.
+    const textColor = "#473f34"; // No se usan directamente en el render, pero se mantienen.
+    const accentColor = "#808080"; // No se usan directamente en el render, pero se mantienen.
     const backendUrl = "https://backend-54972464273.us-central1.run.app";
     const messagesEndRef = useRef(null);
 
@@ -72,6 +72,27 @@ function Chatbot() {
         }
     };
 
+    // función para renderizar el texto con enlaces
+    const renderTextWithLinks = (text) => {
+        // Expresión regular  con lookahead para no incluir puntuación final
+        const urlRegex = /(https?:\/\/[^\s]+?)(?=[.,;!?]?(\s|$))/g;
+        
+        // El método `split` con una expresión regular que contiene grupos de captura
+        // incluirá los matches en el array resultante.
+        const parts = text.split(urlRegex);
+
+        return parts.map((part, index) => {
+            if (part && part.match(/^https?:\/\/[^\s]+$/)) { // Comprobación más estricta para asegurar que es una URL
+                return (
+                    <a key={index} href={part} target="_blank" rel="noopener noreferrer">
+                        {part}
+                    </a>
+                );
+            }
+            return part;
+        });
+    };
+
     return (
         <>
             {/* Botón flotante para abrir el chatbot */}
@@ -96,7 +117,7 @@ function Chatbot() {
                     {chatHistory.map((msg, index) => (
                         <div key={index} className={`message-container ${msg.sender === "user" ? 'user' : 'bot'}`}>
                             <div className="message-bubble">
-                                {msg.text}
+                                {renderTextWithLinks(msg.text)} {/* Usa la nueva función aquí */}
                             </div>
                         </div>
                     ))}
