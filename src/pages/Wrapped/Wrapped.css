@@ -210,7 +210,7 @@ align-items: center;
     border-radius: 16px;
     background-image: url("/assets/images/brown_wave.svg");
     background-size: 101%;
-    background-position: bottom;
+    background-position-y: calc(100% + 2px);
     background-repeat: no-repeat;
 }
 
@@ -249,14 +249,14 @@ align-items: center;
 .chat-container {
     background-image: url("/assets/images/brown_wave.svg");
     background-size: 101%;
-    background-position-y: calc(100% + 5px);
+    background-position-y: calc(100% + 2px);
     background-repeat: no-repeat;
 }
 .coins-container,
 .streak-container {
     background-image: url("/assets/images/green_wave.svg");
     background-size: 101%;
-    background-position-y: calc(100% + 5px);
+    background-position-y: calc(100% + 2px);
     background-repeat: no-repeat;
 }
 .coins-container,
