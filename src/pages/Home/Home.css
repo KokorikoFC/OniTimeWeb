@@ -38,6 +38,7 @@
         width: 80%;
     }
     .hero {
-        height: 110vh;
+        height: 105vh;
+        background-attachment: unset;
     }
 }
