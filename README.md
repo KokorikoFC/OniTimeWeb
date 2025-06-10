@@ -13,20 +13,20 @@ The website provides detailed information about the app, a download option, and 
 - **Chat Assistant:** Integration using `Google Cloud` and `Docker`
 - **Hosting:** `Firebase Hosting`
 
-## Pages Structure
+## 📂 Pages Structure
 
-### Home
+### 🏠 Home
 
 - Main landing page with app information.
 - Download button for the OniTime app.
 - Includes a form where registered users can enter their credentials.
   If validated, they are redirected to the **Wrapped** page.
 
-### Wrapped
+<img src="src/assets/images/home_hero.png" width="550" alt="Home Screen">
+
+### 📊 Wrapped
 
 - Displays a visual summary of the user's activity within the OniTime app.
 - Accessible only after entering valid user credentials.
 
-## 📂 App Repository
-
-The mobile app repository is available here: [TfgOnitime](https://github.com/KokorikoFC/TfgOnitime.git)
+<img src="src/assets/images/wrapped_screenshot.png" width="550" alt="Wrapped Screen">
