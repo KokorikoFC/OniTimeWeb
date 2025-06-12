@@ -43,8 +43,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
     const waveSrc = isLast
         ? brownWave
         : bgColor === "var(--light_green)"
-        ? whiteWave
-        : greenWave;
+            ? whiteWave
+            : greenWave;
 
     const dynamicClass = `home-content-container home-content-${id}`;
 
@@ -124,7 +124,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 {id === 9 && (
                     <div className="download-button">
                         <a
-                            href="https://firebasestorage.googleapis.com/v0/b/tfgonitime.firebasestorage.app/o/OniTime.apk?alt=media&token=92766b2a-fee4-43c9-a9bd-878fe43f57ad"
+                            href="https://firebasestorage.googleapis.com/v0/b/tfgonitime.firebasestorage.app/o/OniTime.apk?alt=media&token=2e2cedcf-a55a-4f95-a09e-2dc0f842baaa"
                             download="OniTime.apk"
                             rel="noopener noreferrer"
                         >
@@ -167,9 +167,8 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                         <img
                             key={idx}
                             src={imgSrc}
-                            alt={`Home style ${
-                                (idx % originalHomeImages.length) + 1
-                            }`}
+                            alt={`Home style ${(idx % originalHomeImages.length) + 1
+                                }`}
                             className="home_style_image"
                         />
                     ))}
