@@ -65,7 +65,7 @@ function Chatbot() {
             console.error("Error al comunicarse con el backend:", err);
             setChatHistory((prev) => [
                 ...prev,
-                { sender: "bot", text: `Error: ${err.message || "No se pudo conectar con la IA."}` },
+                { sender: "bot", text: `Oni no está disponible en este momento.` },
             ]);
         } finally {
             setLoading(false);
@@ -76,7 +76,7 @@ function Chatbot() {
     const renderTextWithLinks = (text) => {
         // Expresión regular  con lookahead para no incluir puntuación final
         const urlRegex = /(https?:\/\/[^\s]+?)(?=[.,;!?]?(\s|$))/g;
-        
+
         // El método `split` con una expresión regular que contiene grupos de captura
         // incluirá los matches en el array resultante.
         const parts = text.split(urlRegex);

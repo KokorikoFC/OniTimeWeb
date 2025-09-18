@@ -124,7 +124,7 @@ function HomeContent({ id, bgColor, subtitle, title, text, image, isLast }) {
                 {id === 9 && (
                     <div className="download-button">
                         <a
-                            href="https://firebasestorage.googleapis.com/v0/b/tfgonitime.firebasestorage.app/o/OniTime.apk?alt=media&token=2e2cedcf-a55a-4f95-a09e-2dc0f842baaa"
+                            href="https://github.com/KokorikoFC/TfgOnitime/releases/download/v1.0.0/OniTime.apk"
                             download="OniTime.apk"
                             rel="noopener noreferrer"
                         >
